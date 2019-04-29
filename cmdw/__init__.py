@@ -4,4 +4,4 @@ __version__ 	= version.version
 __email__		= "licface@yahoo.com"
 __author__		= "licface@yahoo.com"
 
-import cmdw
+from .cmdw import *
