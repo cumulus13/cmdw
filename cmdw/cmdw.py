@@ -28,7 +28,10 @@ def getSize():
         if len(data) == 2:
             sizex, sizey = data
         else:
-            sizex = data
+            if not data:
+                sizex = sizey = 0
+            else:
+                sizex = data
         sizex = int(sizex)
         sizey = int(sizey)
     return sizex, sizey
