@@ -22,7 +22,13 @@ def getSize():
         else:
             sizex, sizey = 80, 25 # can't determine actual size - return default values
     else:
-        sizex, sizey = os.popen('stty size', 'r').read().split()
+        sizex = 0
+        sizey = 0
+        data = os.popen('stty size', 'r').read().split()
+        if len(data) == 2:
+            sizex, sizey = data
+        else:
+            sizex = data
         sizex = int(sizex)
         sizey = int(sizey)
     return sizex, sizey
