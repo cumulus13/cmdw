@@ -2,7 +2,7 @@ import io
 #import re
 from setuptools import setup
 
-#import os
+import os
 #import shutil
 #try:
     #os.remove(os.path.join('cmdw', '__version__.py'))
@@ -11,7 +11,7 @@ from setuptools import setup
 #shutil.copy2('__version__.py', 'cmdw')
 
 
-with io.open("README.rst", "rt", encoding="utf8") as f:
+with io.open(os.path.join(os.path.dirname(os.path.realpath(__file__)), "README.rst"), "rt", encoding="utf8") as f:
     readme = f.read()
 
 # with io.open("__version__.py", "rt", encoding="utf8") as f:
@@ -37,8 +37,11 @@ setup(
     long_description=readme,
     long_description_content_type="text/markdown",
     packages=["cmdw"],
-    data_files=['__version__.py', 'README.rst', 'LICENSE.rst'],
+    data_files=['README.rst', 'LICENSE.rst'],
     include_package_data=True,
+    package_data = {
+       '': ['*.txt', '*.ini', '*.rst'] 
+    }, 
     python_requires=">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*",
     classifiers=[
         "Development Status :: 5 - Production/Stable",
