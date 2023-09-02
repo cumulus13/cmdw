@@ -35,6 +35,7 @@ setup(
     maintainer_email="cumulus13@gmail.com",
     description="just get info of length and width of terminal/console/cmd",
     long_description=readme,
+    long_description_content_type="text/markdown",
     packages=["cmdw"],
     data_files=['__version__.py', 'README.rst', 'LICENSE.rst'],
     include_package_data=True,
