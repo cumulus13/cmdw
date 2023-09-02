@@ -1,14 +1,14 @@
 import io
-import re
+#import re
 from setuptools import setup
 
-import os
-import shutil
-try:
-    os.remove(os.path.join('cmdw', '__version__.py'))
-except:
-    pass
-shutil.copy2('__version__.py', 'cmdw')
+#import os
+#import shutil
+#try:
+    #os.remove(os.path.join('cmdw', '__version__.py'))
+#except:
+    #pass
+#shutil.copy2('__version__.py', 'cmdw')
 
 
 with io.open("README.rst", "rt", encoding="utf8") as f:
