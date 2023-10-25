@@ -16,8 +16,13 @@ with io.open(os.path.join(os.path.dirname(os.path.realpath(__file__)), "README.r
 
 # with io.open("__version__.py", "rt", encoding="utf8") as f:
     # version = re.search(r"version = \'(.*?)\'", f.read()).group(1)
-import __version__
-version = __version__.version
+    
+try:
+    from . import __version__
+    version = __version__.version
+except:
+    import __version__
+    version = __version__.version    
 
 setup(
     name="cmdw",
