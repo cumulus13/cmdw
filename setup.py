@@ -1,5 +1,5 @@
 import io
-import re
+#import re
 from setuptools import setup
 
 import os
@@ -16,8 +16,8 @@ with io.open("README.rst", "rt", encoding="utf8") as f:
 
 # with io.open("__version__.py", "rt", encoding="utf8") as f:
     # version = re.search(r"version = \'(.*?)\'", f.read()).group(1)
-import __version__
-version = __version__.version
+from cmdw import __version__
+version = __version__
 
 setup(
     name="cmdw",
