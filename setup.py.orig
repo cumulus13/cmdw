@@ -3,12 +3,12 @@ import io
 from setuptools import setup
 
 import os
-import shutil
-try:
-    os.remove(os.path.join('cmdw', '__version__.py'))
-except:
-    pass
-shutil.copy2('__version__.py', 'cmdw')
+#import shutil
+#try:
+    #os.remove(os.path.join('cmdw', '__version__.py'))
+#except:
+    #pass
+#shutil.copy2('__version__.py', 'cmdw')
 
 
 with io.open(os.path.join(os.path.dirname(os.path.realpath(__file__)), "README.rst"), "rt", encoding="utf8") as f:
@@ -16,8 +16,18 @@ with io.open(os.path.join(os.path.dirname(os.path.realpath(__file__)), "README.r
 
 # with io.open("__version__.py", "rt", encoding="utf8") as f:
     # version = re.search(r"version = \'(.*?)\'", f.read()).group(1)
+<<<<<<< HEAD
 from cmdw import __version__
 version = __version__
+=======
+    
+try:
+    from . import __version__
+    version = __version__.version
+except:
+    import __version__
+    version = __version__.version    
+>>>>>>> c4d0e3d7e837f317c98f8688a2e3b37b19efc09d
 
 setup(
     name="cmdw",
@@ -37,7 +47,7 @@ setup(
     long_description=readme,
     long_description_content_type="text/markdown",
     packages=["cmdw"],
-    data_files=['__version__.py', 'README.rst', 'LICENSE.rst'],
+    data_files=['README.rst', 'LICENSE.rst'],
     include_package_data=True,
     package_data = {
        '': ['*.txt', '*.ini', '*.rst'] 
